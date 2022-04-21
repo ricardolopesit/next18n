@@ -78,15 +78,3 @@ export default function Home(props) {
   )
 }
 
-export function getServerSideProps() {
-
-  const data = `Data from server: ${Date.now()}`;
-
-  return {
-    props: {
-      initialData: data,
-    },
-  };
-}
-
-

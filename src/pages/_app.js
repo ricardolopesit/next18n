@@ -3,7 +3,6 @@ import '../../styles/globals.css'
 import '../../i18n';
 import {createContext, useEffect, useMemo, useState} from "react";
 import {useTranslation} from "react-i18next";
-import {useRouter} from "next/router";
 
 const DEFAULT_CONTEXT = {
   language: "en",
@@ -16,8 +15,6 @@ export const LanguageContext = createContext(DEFAULT_CONTEXT);
 function LanguageProvider({children}) {
   const {i18n} = useTranslation();
   const [language, setLanguage] = useState(i18n.language);
-  const router = useRouter();
-  const {pathname} = router;
 
 
   useEffect(() => {
