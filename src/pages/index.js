@@ -14,7 +14,7 @@ const TRANSLATIONS = {
 
 export default function Home(props) {
 
-  const {language}=useContext(LanguageContext);
+  const {language} = useContext(LanguageContext);
 
   const t = useMemo(() => TRANSLATIONS[language || "en"], [language]);
 
@@ -76,6 +76,17 @@ export default function Home(props) {
       </footer>
     </div>
   )
+}
+
+export function getServerSideProps() {
+
+  const data = `Data from server: ${Date.now()}`;
+
+  return {
+    props: {
+      initialData: data,
+    },
+  };
 }
 
 
